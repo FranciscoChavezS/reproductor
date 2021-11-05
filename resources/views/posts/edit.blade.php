@@ -32,7 +32,7 @@
                 <label for="foto" class="col-sm-2 col-form-label">Foto</label>
                 <div class="col-sm-7">
                   <input type="file" class="form-control" name="foto" 
-                    value="{{ old('foto', $post->foto) ?? ''}}" autofocus>
+                    value="{{ old('foto', $post->foto) ?? ''}}" autofocus accept="image/*">
                     <!--Validaciones-->
                     @if($errors->has('foto'))
                       <span class="error text-danger" for="input-name">{{ $errors->first('foto') }}</span>
@@ -76,7 +76,7 @@
                 <label for="cancion" class="col-sm-2 col-form-label">Canción</label>
                 <div class="col-sm-7">
                   <input type="file" class="form-control" name="cancion" 
-                    value="{{ old('cancion', $post->cancion) ?? ''}}" autofocus>
+                    value="{{ old('cancion', $post->cancion) ?? ''}}" autofocus accept=".mp3"> <!--Validar solo archivos mp3-->
                     <!--Validaciones-->
                     @if($errors->has('cancion'))
                       <span class="error text-danger" for="input-name">{{ $errors->first('cancion') }}</span>

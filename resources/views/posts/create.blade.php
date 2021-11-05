@@ -74,7 +74,7 @@
                 <label for="cancion" class="col-sm-2 col-form-label">Canción</label>
                 <div class="col-sm-7">
                   <input type="file" class="form-control" name="cancion"
-                    autocomplete="off"> <!--Validamos que solo acepte archivos tipo imagen png,jpg,jpeg,etc-->
+                    autocomplete="off" accept=".mp3"> <!--Validamos que solo acepte archivos tipo mp3 -->
                     <!--Validaciones-->
                     @if($errors->has('cancion'))
                       <span class="error text-danger" for="input-name">{{ $errors->first('cancion') }}</span>
