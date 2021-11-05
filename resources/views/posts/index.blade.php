@@ -33,6 +33,7 @@
                   <th> Artista </th>
                   <th> Reproducir </th>
                   <th> Fecha de creación </th>
+                  <th> Usuario </th>
                   <th class="text-right"> Acciones </th>
                 </thead>
                 <tbody>
@@ -53,6 +54,7 @@
                     </td>
 
                     <td class="text-primary">{{ $post->created_at->toFormattedDateString() }}</td>
+                    <td>{{ $post->user->name }}</td>
                     <td class="td-actions text-right">
                       <a href="{{ route('posts.show', $post->id) }}" class="btn btn-info"> <i
                           class="material-icons">person</i> </a>

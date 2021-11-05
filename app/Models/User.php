@@ -52,5 +52,9 @@ class User extends Authenticatable
     {
         return $this->roles->flatten()->pluck('name')->unique();
     }
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
     
 }
