@@ -59,12 +59,15 @@
                         <table class="table">
                           <tbody>
                               <select name="role" class="form-control">
-                                <option selected disable>Selecciona un rol</option>
+                                <option value="2" selected disabled>Selecciona un rol</option>
                                   @foreach ($roles as $role)
                                     @if($role->name == str_replace(array('["','"]'), '', $user->tieneRol()))
                                         <option value="{{ $role->id }}" selected>{{ $role->name }}</option>
+                                    
                                     @else
+                                        @can('users.create')
                                         <option value="{{ $role->id }}">{{ $role->name }}</option>
+                                        @endcan
                                     @endif
                                 @endforeach
                           </tbody>
