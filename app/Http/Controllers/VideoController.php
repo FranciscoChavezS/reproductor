@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Post;
 
 class VideoController extends Controller
 {
@@ -17,6 +18,5 @@ class VideoController extends Controller
         $users = User::paginate(10);
         return view('video', compact('users'));
     }
-
     
 }

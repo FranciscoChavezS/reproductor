@@ -38,6 +38,6 @@ Route::group(['middleware' => 'auth'], function() {
     Route::resource('roles', App\Http\Controllers\RoleController::class);
     Route::get('/perfil', [App\Http\Controllers\PerfilController::class, 'index'])->name('perfil');
     Route::post('/perfil', [App\Http\Controllers\PerfilController::class, 'update_avatar'])->name('profile');
-
-  
+    Route::get('/video', [App\Http\Controllers\VideoController::class, 'index'])->name('video');
+    
 });

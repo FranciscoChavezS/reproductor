@@ -22,10 +22,7 @@
                 <hr>
                 <div class="row">
                   <div class="col-6 text-left">
-                    <span class="card-txt-author">Creado</span>
-                  </div>
-                  <div class="col-6 text-right">
-                    <span class="card-txt-date">{{ $post->created_at }}</span>
+                      <input type="submit" class="btn btn-primary" value="Agregar a Playlist">
                   </div>
                 </div>
               </div>

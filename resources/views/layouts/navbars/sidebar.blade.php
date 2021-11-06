@@ -36,8 +36,8 @@
             
             <li class="nav-item{{ $activePage == 'user-management' ? ' active' : '' }}">
               <a class="nav-link" href="{{ route('video') }}">
-                <span class="sidebar-mini"> VI </span>
-                <span class="sidebar-normal"> {{ __('Videos') }} </span>
+                <span class="sidebar-mini"> PL </span>
+                <span class="sidebar-normal"> {{ __('Playlist') }} </span>
               </a>
             </li>
             @can('posts.index')
