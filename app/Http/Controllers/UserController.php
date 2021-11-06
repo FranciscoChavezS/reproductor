@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\UserCreateRequest;
-use App\Http\Requests\UserEditRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
-
 use Spatie\Permission\Models\Role;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\UserEditRequest;
+use App\Http\Requests\UserCreateRequest;
 
 class UserController extends Controller
 {
@@ -90,12 +91,35 @@ class UserController extends Controller
         }
         
         $user->update($data);
-        return redirect()->route('users.show', $user->id)->with('success', 'Usuario actualizado correctamente');
+        return redirect()->route('perfil', $user->id)->with('success', 'Usuario actualizado correctamente');
     }
 
     public function destroy(User $user)
     {
         $user->delete();
         return back()->with('succes', 'Usuario eliminado correctamente');
+    }
+
+    public function profile()
+    {
+        return view('perfil', array('user' => Auth::user()));
+    }
+
+    public function update_avatar(Request $request)
+    {
+        $user = new User();
+        //Guardar ruta de foto de perfil a la BD
+       if($request->hasFile('avatar')){
+        $file2 = $request->file('avatar');
+        $destinationPath2 = 'images/perfil/'; //asignamos la carpeta 
+        $filename2 = time().'-'.$file2->getClientOriginalName(); //recuperar el nombre original del archivo
+        $uploadSuccess = $request->file('avatar')->move($destinationPath2, $filename2); //la imagen cargada la movemos a la carpeta y guardamos la url en la DB
+        $user->avatar = $destinationPath2 . $filename2;
+        }
+
+        $user->save();
+
+        return redirect()->route('perfil', $user->id)->with('success', 'Imagen actualizada correctamente');
+
     }
 }

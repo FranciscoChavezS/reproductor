@@ -5,12 +5,17 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
+          <!-- Mostrar mensaje en user-->
+          @if (session('success'))
+                          <div class="alert alert-success" role="success">
+                            {{ session('success') }}
+                          </div>
+                  @endif
         <div class="card">
           <div class="card-header card-header-primary">
             <div class="card-title">Perfil de Usuario</div>
             <p class="card-category">Vista detallada del usuario {{ Auth::user()->name }} </p>
           </div>
-        
         <!-- Mostrar usuario-->
         <div class="container">
         <div class="main-body">
@@ -19,12 +24,14 @@
                   <div class="card">
                     <div class="card-body">
                       <div class="d-flex flex-column align-items-center text-center">
-                        <img src="{{ asset('/img/default-avatar.png') }}" alt="Admin" class="rounded-circle" width="150">
-                        <div class="mt-3">
-                          <h4>{{ Auth::user()->name }}</h4>
-                          <p class="text-secondary mb-1">{{ Auth::user()->username }}</p>
-                          <p class="text-muted font-size-sm">{{ Auth::user()->email }}</p>
-                          <a href="{{ route('home') }}" class="btn btn-primary">Volver</a>
+                        <img src="/images/perfil/{{ Auth::user()->avatar}}" alt="Admin" class="rounded-circle" width="150">
+                        <form action="{{ route('perfil') }}" enctype="multipart/form-data" method="POST">
+                            @csrf
+                            <label>Actualizar foto</label>
+                            <input type="file" name="avatar" class="card-img-top">
+                          <div class="mt-3">
+                          <input type="submit" class="btn btn-primary" value="Cambiar">
+                        </form>
                           <!-- <a href="#"class="btn btn-outline-primary">Cambiar imagen</a> -->
                         </div>
                       </div>

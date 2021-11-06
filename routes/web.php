@@ -37,5 +37,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::resource('permissions', App\Http\Controllers\PermissionController::class);
     Route::resource('roles', App\Http\Controllers\RoleController::class);
     Route::get('/perfil', [App\Http\Controllers\PerfilController::class, 'index'])->name('perfil');
+    Route::post('/perfil', [App\Http\Controllers\PerfilController::class, 'update_avatar'])->name('profile');
+
   
 });
