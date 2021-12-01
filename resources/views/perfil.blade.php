@@ -30,7 +30,7 @@
                             <label>Actualizar foto</label>
                             <input type="file" name="avatar" class="card-img-top">
                           <div class="mt-3">
-                          <input type="submit" class="btn btn-primary" value="Cambiar">
+                          <input type="submit" class="btn btn-outline-info" value="Cambiar">
                         </form>
                           <!-- <a href="#"class="btn btn-outline-primary">Cambiar imagen</a> -->
                         </div>

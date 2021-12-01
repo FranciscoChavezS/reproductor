@@ -34,8 +34,8 @@
               </a>
             </li>
             
-            <li class="nav-item{{ $activePage == 'user-management' ? ' active' : '' }}">
-              <a class="nav-link" href="{{ route('video') }}">
+            <li class="nav-item{{ $activePage == 'playlist' ? ' active' : '' }}">
+              <a class="nav-link" href="{{ route('playlist') }}">
                 <span class="sidebar-mini"> PL </span>
                 <span class="sidebar-normal"> {{ __('Playlist') }} </span>
               </a>

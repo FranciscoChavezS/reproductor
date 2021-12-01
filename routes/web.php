@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\PlaylistController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +40,10 @@ Route::group(['middleware' => 'auth'], function() {
     Route::resource('roles', App\Http\Controllers\RoleController::class);
     Route::get('/perfil', [App\Http\Controllers\PerfilController::class, 'index'])->name('perfil');
     Route::post('/perfil', [App\Http\Controllers\PerfilController::class, 'update_avatar'])->name('profile');
-    Route::get('/video', [App\Http\Controllers\VideoController::class, 'index'])->name('video');
+    //Route::resource('playlist', App\Http\Controllers\PlaylistController::class);
+    Route::get('/playlist', [App\Http\Controllers\PlaylistController::class, 'index'])->name('playlist');
     
+    Route::post('/add-to-playlist/{id}', [PlaylistController::class,'addToCart'])->name('playlist.addToCart');
+
+
 });

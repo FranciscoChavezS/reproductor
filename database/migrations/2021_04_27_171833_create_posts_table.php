@@ -16,11 +16,11 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('foto');
+            $table->string('foto')->nullable();
             $table->date('fecha');
             $table->string('genero');
             $table->string('artista');
-            $table->string('cancion');
+            $table->string('cancion')->nullable();
             $table->foreignId('user_id')->constrained(); //llave foranea
             $table->timestamps();
         });

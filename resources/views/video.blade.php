@@ -1,4 +1,4 @@
-@extends('layouts.main', ['activePage' => 'user-management', 'titlePage' => __('¡Videos mas votados!')])
+@extends('layouts.main', ['activePage' => 'user-management', 'titlePage' => __('¡Lista de Reproducción!')])
 
 @section('content')
 <div class="content">

@@ -83,8 +83,9 @@
             Encinas Mardueño Catherine Michelle <br>
             Moreno Esparza Paola Janeth <br>
             Nuñez Alavarado Bryan Daniel <br>
-            Ramírez Rojas Judith Samara | 
-            Vázquez Rodríguez Luis Eduardo
+            Ramírez Rojas Judith Samara  <br>
+            Vázquez Rodríguez Luis Eduardo <br>
+            Flores Luquin Pedro
             </p>
             <img src="{{ asset('img/login_2.jpg')}}" alt="">
         </div>  
